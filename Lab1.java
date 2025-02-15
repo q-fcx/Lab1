@@ -48,6 +48,7 @@ public class Lab1 {
 //         int number;
 //         double average = 0;
 //
+//        // Loop through countOfNumbers, with each iteration it counts the sum of numbers and then assign the total to the average
 //         for(int i = 1; i <= countOfNumbers; i++) {
 //             System.out.println("Enter an integer: ");
 //             number = input.nextInt();
@@ -84,6 +85,7 @@ public class Lab1 {
 //
 //        String reverse = "";
 //        char ch;
+        // The loop start from last index to the first, and by using the charAt method we can take each character and put them in the reverse variable in a reversed order.
 //        for(int i = word.length() - 1; i >= 0; i--) {
 //            ch = word.charAt(i);
 //            reverse = reverse + ch;
@@ -148,9 +150,11 @@ public class Lab1 {
 //        System.out.println("Input second integer: ");
 //        int second = input.nextInt();
 //
+                // if first not equal second then there's only one operator to print, that's why we put it in an if statement by itself.
 //            if(first != second) {
 //            System.out.println(first + " != " + second);
 //            }
+
 //            if (first > second) {
 //                System.out.println(first + " > " + second);
 //                System.out.println(first + " >= " + second);
@@ -169,10 +173,9 @@ public class Lab1 {
 //        System.out.println("Input seconds: ");
 //        int inputSeconds = input.nextInt();
 //
-//        int hours = inputSeconds / 60;
-//        int minutes = hours % 60;
-//        int seconds = inputSeconds % 60;
-//        hours = hours / 60;
+//        int hours = inputSeconds / 3600; // divide the inputSeconds by 3600 (60 minutes * 60 seconds) to get the total hours
+//        int minutes = (inputSeconds / 60) % 60; // converts total seconds into minutes then takes the remaining minutes within one hour (minutes % 60)
+//        int seconds = inputSeconds % 60; // calculating the remaining seconds after extracting the minutes
 //
 //        System.out.println(hours + ":" + minutes + ":" + seconds);
 
@@ -190,10 +193,14 @@ public class Lab1 {
 //        System.out.println("Input fourth number: ");
 //        int number4 = input.nextInt();
 //
-//        boolean firstCompare = number1 == number2;
-//        boolean secondCompare = number3 == number4;
+//        // split the numbers entered by the user into three sets
+//        boolean firstCompare = (number1 == number2);
+//        boolean secondCompare = (number3 == number4);
+//        boolean thirdCompare = (number2 == number3);
 //
-//        if(firstCompare == secondCompare) {
+//
+//        // check if all three sets are equal
+//        if(firstCompare && secondCompare && thirdCompare ) {
 //            System.out.println("Numbers are equal");
 //        } else
 //            System.out.println("Numbers are not equal");
@@ -252,9 +259,9 @@ public class Lab1 {
 //        int reverse = 0;
 //
 //        while(number != 0) {
-//            reminder = number % 10;
-//            reverse = reverse * 10 + reminder;
-//            number = number / 10;
+//            reminder = number % 10; // extract the last digit of the number
+//            reverse = reverse * 10 + reminder; // add a new digit and shift previous digit to the left
+//            number = number / 10; // remove the last digit of number
 //        }
 //
 //        System.out.println(reverse);
@@ -266,26 +273,31 @@ public class Lab1 {
 //        System.out.println("Enter count of numbers: ");
 //        int countNumbers = input.nextInt();
 //
+//        System.out.println("Enter a number: ");
+//        int number = input.nextInt(); // read first number
+//        int largest = number; // initialize the largest with the first input value
+//        int smallest = number; // initialize the smallest with the first input value
 //
-//        int number;
-//        int largest = 0;
-//        int smallest = 0;
-//        for(int i = 1; i <= countNumbers; i++) {
-//            System.out.println("Enter a number");
+//
+//        // This for loop starts from the second input
+//        for (int i = 1; i < countNumbers; i++) {
+//            System.out.println("Enter a number: ");
 //            number = input.nextInt();
 //
-//            if(st > number){
-//                largest = st;
-//            } else if (tt < number) {
-//
-//
+//            // update largest if current number is greater
+//            if (number > largest) {
+//                largest = number;
 //            }
-//
+//            // update smallest if current number is smaller
+//            if (number < smallest) {
+//                smallest = number;
+//            }
 //        }
 //
 //        System.out.println("Largest: " + largest);
-//        System.out.println();
-//
+//        System.out.println("Smallest: " + smallest);
+
+
 
 
 //        18 - Determine and print the number of times the character ‘a’ appears in the input
